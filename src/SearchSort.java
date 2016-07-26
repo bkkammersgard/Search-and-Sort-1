@@ -34,6 +34,17 @@ public class SearchSort {
     }
 
     public static String[] mergeSort(String[] arr) {
+    	if(arr.length > 1){
+    		return arr;
+    	}else{
+    		int midpoint = arr.length/2;
+    		String[] sArray0 = Arrays.copyOfRange(arr, 0, midpoint);
+    		String[] sArray1 = Arrays.copyOfRange(arr, midpoint, arr.length);
+    		mergeSort(sArray0);
+    		mergeSort(sArray1);
+    	}
+    	merge(sArray0, sArray1);
+    	
         //check and make sure array has more than one item. 
         //split the array into two eqal parts
         //recursevely call mergeSort with both of your new arrays
