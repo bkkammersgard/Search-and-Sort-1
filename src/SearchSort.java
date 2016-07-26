@@ -6,8 +6,15 @@ public class SearchSort {
     //explained in readme.  one solution uses a boolean to check if a swap has been completed or not.  
     //This does not have to be recursive.  Otherwise this method is explained in the readme.
     public static void bubbleSort(String[] arr) {
-       
-              
+       for(int i = 0; i < arr.length - 1; i++){
+    	   for(int j = 0; j < arr.length - 1; j++){
+    		   if(arr[j].compareToIgnoreCase(arr[j + 1]) > 0){
+    			   String curr = arr[j];
+    			   arr[j] = arr[j + 1];
+    			   arr[j + 1] = curr;
+    		   }
+    	   }
+       }             
     }
 
     // takes a sorted array and returns the index of the desired string or -1 if not found
@@ -48,9 +55,27 @@ public class SearchSort {
         // be brave, use google
     }
 
+    public static String[] fileReader(File input){
+    	try {
+			Scanner scanner = new Scanner(input);
+			ArrayList<String> list = new ArrayList<>();
+			while(scanner.hasNext()){
+				list.add(scanner.next());
+			}
+			return list.toArray(new String[list.size()]);
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found.");
+			e.printStackTrace();
+		}
+    	return null;
+    }
+    
     public static void main(String[] args) throws FileNotFoundException {
-        //First make this compile.
-        
+    	
+        String[] nameArray = fileReader(new File(args[0]));
+        System.out.println(Arrays.toString(nameArray));
+        bubbleSort(nameArray);
+        System.out.println(Arrays.toString(nameArray));
         //read in a file from args[0] and store in an array
         //write bubble sort and test, by printing our your new array
         //before and after calling bubbleSort
