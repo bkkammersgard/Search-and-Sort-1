@@ -20,7 +20,7 @@ public class SearchSort {
         //this should be done recursively.  Assume that the passed in array is sorted.  Look at the 
         //midpoint of the array and see if the string "lookfor" comes before or after the midpoint.
         //Then recursively call binarySearchHelper with the part of the array that you think holds "lookfor"
-        //What are your base cases?  Handle the case where the string is not found. Adding!
+        //What are your base cases?  sdrtluhsdthyHandle the case where the string is not found. Adding!
         //Part of the trick here is you will be  maintaining the original array.   You are just moving the pointers "lo" and "hi"
         //so that the function looks at a specific part of the array.  This way you will be able to return the index of "lookfor".
         return null;
